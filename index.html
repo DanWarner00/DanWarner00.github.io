@@ -436,27 +436,17 @@
 
 <!-- TICKER -->
 <div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="t-sym">AAPL</span><span class="t-up">▲ 1.24%</span><span class="t-val">213.45</span></span>
-    <span class="ticker-item"><span class="t-sym">TSLA</span><span class="t-down">▼ 0.88%</span><span class="t-val">184.72</span></span>
-    <span class="ticker-item"><span class="t-sym">NVDA</span><span class="t-up">▲ 2.41%</span><span class="t-val">875.30</span></span>
-    <span class="ticker-item"><span class="t-sym">SPY</span><span class="t-up">▲ 0.33%</span><span class="t-val">527.11</span></span>
-    <span class="ticker-item"><span class="t-sym">MSFT</span><span class="t-down">▼ 0.15%</span><span class="t-val">415.88</span></span>
-    <span class="ticker-item"><span class="t-sym">QQQ</span><span class="t-up">▲ 0.57%</span><span class="t-val">456.20</span></span>
-    <span class="ticker-item"><span class="t-sym">AMZN</span><span class="t-up">▲ 1.09%</span><span class="t-val">191.54</span></span>
-    <span class="ticker-item"><span class="t-sym">META</span><span class="t-down">▼ 0.44%</span><span class="t-val">527.33</span></span>
-    <span class="ticker-item"><span class="t-sym">GLD</span><span class="t-up">▲ 0.22%</span><span class="t-val">230.87</span></span>
-    <span class="ticker-item"><span class="t-sym">GOOG</span><span class="t-up">▲ 0.76%</span><span class="t-val">174.12</span></span>
-    <span class="ticker-item"><span class="t-sym">AAPL</span><span class="t-up">▲ 1.24%</span><span class="t-val">213.45</span></span>
-    <span class="ticker-item"><span class="t-sym">TSLA</span><span class="t-down">▼ 0.88%</span><span class="t-val">184.72</span></span>
-    <span class="ticker-item"><span class="t-sym">NVDA</span><span class="t-up">▲ 2.41%</span><span class="t-val">875.30</span></span>
-    <span class="ticker-item"><span class="t-sym">SPY</span><span class="t-up">▲ 0.33%</span><span class="t-val">527.11</span></span>
-    <span class="ticker-item"><span class="t-sym">MSFT</span><span class="t-down">▼ 0.15%</span><span class="t-val">415.88</span></span>
-    <span class="ticker-item"><span class="t-sym">QQQ</span><span class="t-up">▲ 0.57%</span><span class="t-val">456.20</span></span>
-    <span class="ticker-item"><span class="t-sym">AMZN</span><span class="t-up">▲ 1.09%</span><span class="t-val">191.54</span></span>
-    <span class="ticker-item"><span class="t-sym">META</span><span class="t-down">▼ 0.44%</span><span class="t-val">527.33</span></span>
-    <span class="ticker-item"><span class="t-sym">GLD</span><span class="t-up">▲ 0.22%</span><span class="t-val">230.87</span></span>
-    <span class="ticker-item"><span class="t-sym">GOOG</span><span class="t-up">▲ 0.76%</span><span class="t-val">174.12</span></span>
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-item"><span class="t-sym">TSLA</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
+    <span class="ticker-item"><span class="t-sym">NVDA</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
+    <span class="ticker-item"><span class="t-sym">PLTR</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
+    <span class="ticker-item"><span class="t-sym">META</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
+    <span class="ticker-item"><span class="t-sym">QQQ</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
+    <span class="ticker-item"><span class="t-sym">AAPL</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
+    <span class="ticker-item"><span class="t-sym">MSFT</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
+    <span class="ticker-item"><span class="t-sym">AMZN</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
+    <span class="ticker-item"><span class="t-sym">GOOG</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
+    <span class="ticker-item"><span class="t-sym">SPY</span><span class="t-up">▲ —</span><span class="t-val">—</span></span>
   </div>
 </div>
 
@@ -848,6 +838,42 @@
   <span class="fmono">Daniel Warner © 2026 · Portland, OR</span>
   <span class="fmono">Open to remote · <a href="mailto:warnd114@gmail.com">warnd114@gmail.com</a></span>
 </footer>
+
+<script>
+  // Live stock ticker
+  const FINNHUB_KEY = 'd6j240pr01ql467hvuk0d6j240pr01ql467hvukg';
+  const TICKER_SYMBOLS = ['TSLA','NVDA','PLTR','META','QQQ','AAPL','MSFT','AMZN','GOOG','SPY'];
+
+  (async () => {
+    try {
+      const results = await Promise.all(
+        TICKER_SYMBOLS.map(sym =>
+          fetch(`https://finnhub.io/api/v1/quote?symbol=${sym}&token=${FINNHUB_KEY}`)
+            .then(r => r.json())
+            .then(d => ({ sym, price: d.c, pct: d.dp }))
+            .catch(() => null)
+        )
+      );
+
+      const items = results
+        .filter(d => d && d.price)
+        .map(({ sym, price, pct }) => {
+          const up = pct >= 0;
+          const cls = up ? 't-up' : 't-down';
+          const arrow = up ? '▲' : '▼';
+          return `<span class="ticker-item"><span class="t-sym">${sym}</span><span class="${cls}">${arrow} ${Math.abs(pct).toFixed(2)}%</span><span class="t-val">${price.toFixed(2)}</span></span>`;
+        })
+        .join('');
+
+      if (items) {
+        const track = document.getElementById('ticker-track');
+        track.innerHTML = items + items; // duplicate for seamless infinite scroll
+      }
+    } catch (e) {
+      console.warn('Stock ticker fetch failed', e);
+    }
+  })();
+</script>
 
 <script>
   const reveals = document.querySelectorAll('.reveal');

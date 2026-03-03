@@ -245,7 +245,7 @@
 
     .skills-grid {
       margin-top: 48px;
-      display: grid; grid-template-columns: repeat(4,1fr);
+      display: grid; grid-template-columns: repeat(3,1fr);
       gap: 1px; background: var(--border);
       border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
     }
@@ -326,14 +326,58 @@
       flex-shrink: 0; font-size: 14px; line-height: 1.4;
     }
 
-    .ph {
-      margin-top: 22px; aspect-ratio: 16/9;
+    /* ── GALLERY ── */
+    .pgallery {
+      border-top: 1px solid var(--border);
+      padding: 20px 32px 24px;
+      display: flex; gap: 12px;
+      overflow-x: auto;
+      scrollbar-width: thin; scrollbar-color: var(--border2) transparent;
+    }
+    .pgallery::-webkit-scrollbar { height: 4px; }
+    .pgallery::-webkit-scrollbar-track { background: transparent; }
+    .pgallery::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+    .gthumb {
+      flex-shrink: 0; height: 220px; aspect-ratio: 16/9;
+      object-fit: cover; border-radius: 5px;
+      border: 1.5px solid var(--border); cursor: zoom-in;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .gthumb:hover { border-color: var(--ink); transform: scale(1.02); }
+    .gslot {
+      flex-shrink: 0; height: 220px; aspect-ratio: 16/9;
       background: var(--cream2); border: 1.5px dashed var(--border2);
       border-radius: 5px; display: flex; flex-direction: column;
       align-items: center; justify-content: center; gap: 10px;
     }
-    .ph svg { width: 28px; height: 28px; stroke: var(--dim); fill: none; }
-    .ph span { font-family: var(--mono); font-size: 10px; color: var(--dim); letter-spacing: 0.07em; }
+    .gslot svg { width: 28px; height: 28px; stroke: var(--dim); fill: none; }
+    .gslot span { font-family: var(--mono); font-size: 10px; color: var(--dim); letter-spacing: 0.07em; }
+
+    /* ── LIGHTBOX ── */
+    .lb-overlay {
+      position: fixed; inset: 0; background: rgba(26,24,20,0.93);
+      z-index: 9999; display: flex; align-items: center; justify-content: center;
+      animation: lbIn 0.15s ease; cursor: zoom-out;
+    }
+    @keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
+    .lb-img { max-width: 88vw; max-height: 86vh; object-fit: contain; border-radius: 5px; display: block; cursor: default; }
+    .lb-close {
+      position: absolute; top: 22px; right: 28px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4); cursor: pointer; text-transform: uppercase; transition: color 0.12s;
+    }
+    .lb-close:hover { color: #fff; }
+    .lb-arr {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      font-family: var(--mono); font-size: 30px; color: rgba(255,255,255,0.35);
+      cursor: pointer; padding: 20px; transition: color 0.12s; user-select: none;
+    }
+    .lb-arr:hover { color: #fff; }
+    .lb-prev { left: 8px; } .lb-next { right: 8px; }
+    .lb-counter {
+      position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
+      font-family: var(--mono); font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em;
+    }
 
     /* ── EXPERIENCE ── */
     #experience { background: var(--white); }
@@ -549,6 +593,7 @@
       <div class="skill"><div class="skill-name">Power BI</div><div class="skill-sub">dashboards · reporting</div></div>
       <div class="skill"><div class="skill-name">Excel</div><div class="skill-sub">advanced formulas · models</div></div>
       <div class="skill"><div class="skill-name">Git · Jira · Confluence</div><div class="skill-sub">version control · docs</div></div>
+      <div class="skill"><div class="skill-name">Claude Code</div><div class="skill-sub">AI coding · agent workflows</div></div>
     </div>
   </div>
 </section>
@@ -565,7 +610,8 @@
           <div>
             <div class="pmeta"><span class="pnum">P.01</span><span class="pbadge live">SHIPPED</span></div>
             <div class="ptitle">AI Job Search Platform</div>
-            <div class="psub">I built an AI to do my job search for me. It mostly works, which is either impressive or a bad sign about the state of hiring.</div>
+            <div class="psub">What started as an excuse to start learning the new OpenClaw gateway turned into a very useful project for assisting in the job search and application process.
+            </div>
             <div class="ptags">
               <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Claude API</span>
               <span class="tag">Playwright</span><span class="tag">SQLite</span><span class="tag">TailwindCSS</span>
@@ -580,25 +626,26 @@
         </div>
         <div class="pbody">
           <div class="pdesc">
-            <p>Scrapes Indeed and Adzuna, scores each listing against my resume using Claude Haiku, and generates cover letters with Sonnet. Full Kanban board for tracking applications, interview calendar, and an analytics dashboard so I can see exactly how many rejections I've collected in one place.</p>
-            <p>The AI match explanation is genuinely useful — flags what I clearly qualify for, what's a stretch, and what I definitely don't have. Saved me from applying to things with "5+ years required" buried in fine print.</p>
-            <div class="ph">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span>[ SCREENSHOT — DASHBOARD / KANBAN ]</span>
-            </div>
+            <p>Upload your resume, set preferences for location, job type, salary range, and keywords, and the platform scrapes leading job boards like Indeed and Adzuna for relevant listings. Connected to the Claude API with a custom system prompt, it grades each job with a match score and stores everything in a SQLite database to avoid duplicate entries. Features include a Kanban board for tracking jobs you've applied to, scheduled interviews, rejections, and inactive listings — giving you a clear picture of your search at a glance. A cover letter generator pulls from your resume and the preferences you've provided to produce a tailored letter based on each job's description. There's also a calendar for scheduled interviews and an AI summarizer that explains why you are (or aren't) a good fit for the position.</p>
+            <p>The match summarizer has been useful for flagging jobs where I clearly don't meet the requirements and for affirming when something looks like a strong fit. The Kanban keeps the application pipeline organized at a glance. Down the road, I'd like the system to learn from jobs I've marked as "not relevant" to further refine what gets scraped. Note: application statuses shown in the Kanban are not reflective of my actual job search progress — they're there to demonstrate the feature.</p>
           </div>
           <div class="pright">
             <div class="phlabel">What it does</div>
-            <div class="phi">Multi-board scraping with Playwright automation</div>
-            <div class="phi">AI resume scoring — Haiku for matching, Sonnet for letters</div>
-            <div class="phi">Kanban: Applied → Interview → Offer → (sigh)</div>
-            <div class="phi">Interview calendar and prep notes per application</div>
-            <div class="phi">Analytics dashboard to track metrics over time</div>
-            <div class="ph">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span>[ SCREENSHOT — AI MATCH DETAIL ]</span>
-            </div>
+            <div class="phi">Preference-based scraping across Indeed and Adzuna</div>
+            <div class="phi">AI match scoring and fit explanation per listing</div>
+            <div class="phi">Cover letter generator using resume + job details</div>
+            <div class="phi">Kanban board: Applied → Interview → Offer → Rejected</div>
+            <div class="phi">Interview calendar and analytics dashboard</div>
           </div>
+        </div>
+        <div class="pgallery">
+          <img class="gthumb" src="images/settings_job_search.png" alt="Settings" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/jobs_job_search.png" alt="Jobs Listing" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/job_desc_job_search.png" alt="Job Detail / AI Match" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/kanban_job_search.png" alt="Kanban Board" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/calendar_job_search.png" alt="Interview Calendar" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/calendar_job_search_2.png" alt="Interview Calendar 2" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/analytics_job_search.png" alt="Analytics Dashboard" onclick="openLightbox(this)">
         </div>
       </div>
 
@@ -622,10 +669,6 @@
           <div class="pdesc">
             <p>My main professional work. Built the data infrastructure for a federal weatherization program under the Inflation Reduction Act — processing energy, demographic, and property data for over a million households to identify 40,000 eligible candidates for free home upgrades under Justice 40 compliance requirements.</p>
             <p>Day-to-day: custom Python formulas for heating and cooling load calculations, keeping MongoDB clean across constantly-shifting county datasets, and producing the reports that kept the program on schedule.</p>
-            <div class="ph">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span>[ SCREENSHOT — JUPYTER / DATA PIPELINE ]</span>
-            </div>
           </div>
           <div class="pright">
             <div class="phlabel">Key Work</div>
@@ -634,10 +677,12 @@
             <div class="phi">Automated eligibility scoring across 30+ county datasets</div>
             <div class="phi">Justice 40 and IRA compliance reporting</div>
             <div class="phi">Dashboards for community action agencies statewide</div>
-            <div class="ph">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span>[ SCREENSHOT — MONGODB / DASHBOARD ]</span>
-            </div>
+          </div>
+        </div>
+        <div class="pgallery">
+          <div class="gslot">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>SCREENSHOTS COMING SOON</span>
           </div>
         </div>
       </div>
@@ -665,10 +710,6 @@
           <div class="pdesc">
             <p>KUMU runs a raw dentist-patient transcript through a multi-node LangGraph pipeline — one node per SOAP section (Subjective, Objective, Assessment, Plan, Personal). Pydantic output validation at every step means the clinical note comes out in a usable format rather than a wall of AI text.</p>
             <p>Built to run on local models so patient data never leaves the clinic. Includes both a Flask web UI and a Gradio prototype. Drop in a transcript, get back a formatted clinical note ready for the patient record.</p>
-            <div class="ph">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span>[ SCREENSHOT — KUMU UI ]</span>
-            </div>
           </div>
           <div class="pright">
             <div class="phlabel">How it works</div>
@@ -677,10 +718,12 @@
             <div class="phi">Runs fully local — no patient data sent to external APIs</div>
             <div class="phi">Flask web app + Gradio prototype</div>
             <div class="phi">System prompts tuned for dental clinical language</div>
-            <div class="ph">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span>[ SCREENSHOT — TRANSCRIPT → SOAP OUTPUT ]</span>
-            </div>
+          </div>
+        </div>
+        <div class="pgallery">
+          <div class="gslot">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>SCREENSHOTS COMING SOON</span>
           </div>
         </div>
       </div>
@@ -708,10 +751,6 @@
           <div class="pdesc">
             <p>Configure a strategy using TA-Lib indicators — MACD, SMA, Bollinger Bands, RSI, and more — with parameter ranges for each. A genetic algorithm backtests and evolves combinations over historical data, then exports an optimized JSON config for live deployment.</p>
             <p>That config feeds into the live monitoring UI, pulling a continuous stream from Interactive Brokers or Charles Schwab. When your indicator combo triggers on a watched stock, the platform surfaces the signal and calculates stop loss and take profit levels. You make the call. It never blinks.</p>
-            <div class="ph">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span>[ SCREENSHOT — MULTI-STOCK CARD VIEW ]</span>
-            </div>
           </div>
           <div class="pright">
             <div class="phlabel">How it works</div>
@@ -720,10 +759,12 @@
             <div class="phi">Exports optimized JSON configs for live deployment</div>
             <div class="phi">Live feed from Interactive Brokers or Charles Schwab API</div>
             <div class="phi">Multi-stock card view — signals, stop loss, take profit per ticker</div>
-            <div class="ph">
-              <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span>[ SCREENSHOT — BACKTEST RESULTS ]</span>
-            </div>
+          </div>
+        </div>
+        <div class="pgallery">
+          <div class="gslot">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>SCREENSHOTS COMING SOON</span>
           </div>
         </div>
       </div>
@@ -873,6 +914,49 @@
       console.warn('Stock ticker fetch failed', e);
     }
   })();
+</script>
+
+<script>
+  // Photo lightbox
+  let _lbSrcs = [], _lbIdx = 0;
+
+  function openLightbox(el) {
+    const gallery = el.closest('.pgallery');
+    _lbSrcs = [...gallery.querySelectorAll('.gthumb')].map(i => ({ src: i.src, alt: i.alt }));
+    _lbIdx  = [...gallery.querySelectorAll('.gthumb')].indexOf(el);
+    _lbRender();
+  }
+
+  function _lbRender() {
+    document.querySelector('.lb-overlay')?.remove();
+    const multi = _lbSrcs.length > 1;
+    const div = document.createElement('div');
+    div.className = 'lb-overlay';
+    div.innerHTML = `
+      <span class="lb-close" onclick="_lbClose()">ESC / CLOSE</span>
+      <img class="lb-img" src="${_lbSrcs[_lbIdx].src}" alt="${_lbSrcs[_lbIdx].alt}">
+      ${multi ? `<span class="lb-arr lb-prev" onclick="_lbNav(-1)">‹</span><span class="lb-arr lb-next" onclick="_lbNav(1)">›</span>` : ''}
+      ${multi ? `<span class="lb-counter">${_lbIdx + 1} / ${_lbSrcs.length}</span>` : ''}
+    `;
+    div.addEventListener('click', e => { if (e.target === div) _lbClose(); });
+    document.body.appendChild(div);
+  }
+
+  function _lbNav(d) {
+    _lbIdx = (_lbIdx + d + _lbSrcs.length) % _lbSrcs.length;
+    _lbRender();
+  }
+
+  function _lbClose() {
+    document.querySelector('.lb-overlay')?.remove();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (!document.querySelector('.lb-overlay')) return;
+    if (e.key === 'Escape') _lbClose();
+    if (e.key === 'ArrowLeft') _lbNav(-1);
+    if (e.key === 'ArrowRight') _lbNav(1);
+  });
 </script>
 
 <script>

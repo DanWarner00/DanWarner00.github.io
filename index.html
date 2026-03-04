@@ -167,35 +167,23 @@
     .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
 
     /* Hero terminal */
-    .hero-terminal {
-      background: var(--ink); border-radius: 10px; overflow: hidden;
+    .hero-photo {
+      border-radius: 10px; overflow: hidden;
       box-shadow: 0 24px 64px rgba(26,24,20,0.14);
+      border: 1px solid var(--border);
       opacity: 0; animation: fadeUp 0.6s ease 0.28s forwards;
+      aspect-ratio: 3/4; max-width: 300px; width: 100%;
+      background: var(--cream2);
+      display: flex; align-items: center; justify-content: center;
     }
-    .t-bar {
-      background: var(--ink2); padding: 12px 18px;
-      display: flex; align-items: center; gap: 8px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+    .hero-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
     }
-    .tdot { width: 11px; height: 11px; border-radius: 50%; }
-    .tdot.r { background: #ff5f57; } .tdot.y { background: #ffbd2e; } .tdot.g { background: #28c840; }
-    .t-title { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,0.25); margin-left: 8px; }
-    .t-body {
-      padding: 22px 22px 26px;
-      font-family: var(--mono); font-size: 12px; line-height: 2;
+    .hero-photo-empty {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
     }
-    .tl { display: flex; gap: 12px; }
-    .tp { color: #e8a44a; user-select: none; }
-    .tc { color: rgba(255,255,255,0.85); }
-    .to { color: rgba(255,255,255,0.4); padding-left: 22px; }
-    .to.g { color: #5cc98a; }
-    .to.a { color: #e8a44a; }
-    .tcursor {
-      display: inline-block; width: 7px; height: 13px;
-      background: #e8a44a; vertical-align: middle;
-      animation: blink 1.1s step-end infinite;
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .hero-photo-empty svg { width: 36px; height: 36px; stroke: var(--dim); fill: none; }
+    .hero-photo-empty span { font-family: var(--mono); font-size: 10px; color: var(--dim); letter-spacing: 0.08em; }
 
     /* ── SCROLL REVEAL ── */
     .reveal {
@@ -463,7 +451,7 @@
       section { padding: 72px 24px; }
       #hero { padding: 60px 24px 52px; }
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-terminal { display: none; }
+      .hero-photo { display: none; }
       .about-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: repeat(2,1fr); }
       .ptop { grid-template-columns: 1fr; }
@@ -510,11 +498,11 @@
 <section id="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-label"><div class="label-dot"></div>Portland, OR &nbsp;·&nbsp; Data Analytics</div>
+      <div class="hero-label"><div class="label-dot"></div>Portland, OR &nbsp;·&nbsp; AI Builder | Analyst</div>
       <h1>Daniel<br><span class="outline">Warner</span></h1>
       <p class="hero-desc">
-        I wrangle large datasets, build Python automation that actually saves time, and ship things that work.
-        Currently <em>looking for my next role</em> — analyst, data, or adjacent.
+        I enjoy building tools that automate and streamline data workflows, as well as finding insights from data that can benefit businesses and organizations.
+        Currently <em>looking for my next role</em> — analyst, data, AI, or adjacent.
         Open to basically any industry. Yes, including yours.
       </p>
       <div class="hero-actions">
@@ -523,28 +511,8 @@
       </div>
     </div>
 
-    <div class="hero-terminal">
-      <div class="t-bar">
-        <div class="tdot r"></div><div class="tdot y"></div><div class="tdot g"></div>
-        <span class="t-title">daniel@pdx ~ zsh</span>
-      </div>
-      <div class="t-body">
-        <div class="tl"><span class="tp">›</span><span class="tc">whoami</span></div>
-        <div class="to g">daniel_warner // data analytics programmer</div>
-        <br>
-        <div class="tl"><span class="tp">›</span><span class="tc">cat skills.txt</span></div>
-        <div class="to a">Python, MongoDB, SQL, Flask</div>
-        <div class="to a">LangGraph, Pandas, Power BI</div>
-        <div class="to a">Jira, Confluence, Git</div>
-        <br>
-        <div class="tl"><span class="tp">›</span><span class="tc">cat status.txt</span></div>
-        <div class="to">→ building portfolio (meta, I know)</div>
-        <div class="to">→ actively job searching</div>
-        <div class="to">→ watching the market open</div>
-        <div class="to">→ thinking about lunch</div>
-        <br>
-        <div class="tl"><span class="tp">›</span><span class="tc">./hire_me.sh<span class="tcursor"></span></span></div>
-      </div>
+    <div class="hero-photo">
+      <img src="images/cute.jpg" alt="Daniel Warner">
     </div>
   </div>
 </section>
@@ -559,10 +527,10 @@
           I'm a data analytics programmer from Portland with a BS in Business Analytics from the University of Oregon. Most of my professional time has been inside a federal energy efficiency program — building the Python tooling, MongoDB pipelines, and compliance reports that helped identify <em>40,000 eligible households</em> across 30+ Ohio counties for weatherization funding under the Inflation Reduction Act.
         </p>
         <p>
-          That work was interesting, but contracts don't last forever. So here I am — with nearly two years of real program experience, a handful of side projects I actually finished, and a willingness to point my skills at whatever problem needs solving. <em>Energy, finance, healthcare, SaaS</em> — if there's messy data and someone needs it cleaned up and made useful, I'm interested.
+          That work was interesting, but contracts don't last forever. So here I am — with nearly two years of real program experience, a handful of side projects I actually finished, and a willingness to point my skills at whatever problem needs solving. <em>Energy, finance, AI</em> — if there's messy data and someone needs it cleaned up and made useful, I'm interested.
         </p>
         <p>
-          Outside of work: watching market opens with my morning coffee, cooking things I found buried in Reddit, and being a Blazers fan, which builds character if nothing else.
+          Outside of work: watching market opens with my morning coffee, cooking, lifting, playing basketball, discovering new board games, and being a Blazers fan, which builds character if nothing else.
         </p>
       </div>
       <div class="aside reveal d1">
@@ -575,12 +543,8 @@
           <div class="aside-val">BS Business Analytics<br>University of Oregon, 2022<br>Economics minor</div>
         </div>
         <div class="aside-card">
-          <div class="aside-lbl">Outside Work</div>
-          <div class="aside-val">Day trading, cooking, Trail Blazers fan (I'm handling it fine)</div>
-        </div>
-        <div class="aside-card">
           <div class="aside-lbl">Target Roles</div>
-          <div class="aside-val">Data Analyst · Business Analyst · Program Analyst · Operations Analyst</div>
+          <div class="aside-val">Data Analyst · Business Analyst · Program Analyst · Operations Analyst · Programmer Analyst · AI Systems Analyst</div>
         </div>
       </div>
     </div>
@@ -589,7 +553,7 @@
       <div class="skill"><div class="skill-name">MongoDB</div><div class="skill-sub">schema design · pipelines</div></div>
       <div class="skill"><div class="skill-name">SQL</div><div class="skill-sub">querying · reporting</div></div>
       <div class="skill"><div class="skill-name">Flask</div><div class="skill-sub">web apps · REST APIs</div></div>
-      <div class="skill"><div class="skill-name">LangGraph</div><div class="skill-sub">AI workflows · agents</div></div>
+      <div class="skill"><div class="skill-name">AI agents/ workflows</div><div class="skill-sub">Langgraph · n8n · OpenClaw </div></div>
       <div class="skill"><div class="skill-name">Power BI</div><div class="skill-sub">dashboards · reporting</div></div>
       <div class="skill"><div class="skill-name">Excel</div><div class="skill-sub">advanced formulas · models</div></div>
       <div class="skill"><div class="skill-name">Git · Jira · Confluence</div><div class="skill-sub">version control · docs</div></div>
@@ -654,8 +618,8 @@
         <div class="ptop">
           <div>
             <div class="pmeta"><span class="pnum">P.02</span><span class="pbadge pro">PROFESSIONAL</span></div>
-            <div class="ptitle">EmpowerSaves — Federal Weatherization Analytics</div>
-            <div class="psub">Two years, 1M+ households, 30+ counties. The data pipeline behind federal home energy upgrades in Ohio.</div>
+            <div class="ptitle">EmpowerSaves — Inflation Reduction Act Analytics</div>
+            <div class="psub">Two years, 1M+ households, 30+ counties. Managing and presenting data so that community action agencies can effectively help those in need.</div>
             <div class="ptags">
               <span class="tag">Python</span><span class="tag">MongoDB</span><span class="tag">Jupyter</span>
               <span class="tag">pandas</span><span class="tag">Jira</span><span class="tag">Confluence</span>
@@ -668,15 +632,15 @@
         <div class="pbody">
           <div class="pdesc">
             <p>My main professional work. Built the data infrastructure for a federal weatherization program under the Inflation Reduction Act — processing energy, demographic, and property data for over a million households to identify 40,000 eligible candidates for free home upgrades under Justice 40 compliance requirements.</p>
-            <p>Day-to-day: custom Python formulas for heating and cooling load calculations, keeping MongoDB clean across constantly-shifting county datasets, and producing the reports that kept the program on schedule.</p>
+            <p>Day-to-day: coordinating with counties and data providers to ensure data accuracy, cleaning and transforming records from community action agencies, energy providers, and demographic sources, building custom Python applications for "Heat Load" and "Cool Load" calculations and comparable home energy profiling, and managing the MongoDB databases that fed the agency-facing portal.</p>
           </div>
           <div class="pright">
             <div class="phlabel">Key Work</div>
             <div class="phi">Custom heat/cool load formulas for household energy analysis</div>
             <div class="phi">MongoDB architecture for 1M+ household records</div>
             <div class="phi">Automated eligibility scoring across 30+ county datasets</div>
-            <div class="phi">Justice 40 and IRA compliance reporting</div>
-            <div class="phi">Dashboards for community action agencies statewide</div>
+            <div class="phi">Data pipeline coordination across agencies, energy providers, and counties</div>
+            <div class="phi">MongoDB backend feeding a per-household Ruby on Rails portal — Street View, satellite imagery, demographic and energy data for CAA prioritization decisions</div>
           </div>
         </div>
         <div class="pgallery">

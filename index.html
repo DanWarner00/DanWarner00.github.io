@@ -657,7 +657,7 @@
           <div>
             <div class="pmeta"><span class="pnum">P.03</span><span class="pbadge live">DEMO READY</span></div>
             <div class="ptitle">KUMU — Dental SOAP Documentation AI</div>
-            <div class="psub">Turns a messy 10-minute dentist conversation into a clean clinical note. All local — no patient data leaves the building.</div>
+            <div class="psub">Dentist came to us with the problem that they were spending too much time on documentation. Solution: microphone that would record conversations with the patient and custom system prompts that summarize and format the output.</div>
             <div class="ptags">
               <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">Pydantic</span>
               <span class="tag">Local LLMs</span><span class="tag">Flask</span><span class="tag">Gradio</span>
@@ -698,7 +698,7 @@
           <div>
             <div class="pmeta"><span class="pnum">P.04</span><span class="pbadge wip">IN PROGRESS</span></div>
             <div class="ptitle">Algorithmic Trading Workstation</div>
-            <div class="psub">Not a bot — a trader's setup. You build the strategy, the GA optimizes it, the platform watches the market and tells you when to move.</div>
+            <div class="psub">Built with and for day traders. You define the strategy, the algorithm stress-tests it, and the live platform watches the market across far more tickers than any one person could. You still make the call.</div>
             <div class="ptags">
               <span class="tag">Python</span><span class="tag">TA-Lib</span><span class="tag">Genetic Algorithm</span>
               <span class="tag">Interactive Brokers API</span><span class="tag">Charles Schwab API</span><span class="tag">React</span>
@@ -709,27 +709,27 @@
               <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               GitHub
             </a>
-          </div>
+          </div>1
         </div>
         <div class="pbody">
           <div class="pdesc">
-            <p>Configure a strategy using TA-Lib indicators — MACD, SMA, Bollinger Bands, RSI, and more — with parameter ranges for each. A genetic algorithm backtests and evolves combinations over historical data, then exports an optimized JSON config for live deployment.</p>
-            <p>That config feeds into the live monitoring UI, pulling a continuous stream from Interactive Brokers or Charles Schwab. When your indicator combo triggers on a watched stock, the platform surfaces the signal and calculates stop loss and take profit levels. You make the call. It never blinks.</p>
+            <p>A two-part system built in collaboration with day traders and their partners. In the backtesting workstation, traders pick technical indicators — MACD, RSI, Bollinger Bands, SMA, and more — and define parameter ranges and thresholds for each. Those get combined into a single strategy "bar," and the algorithm optimizes the weights and parameters across a chosen date range and set of tickers, showing exactly how each configuration would have performed.</p>
+            <p>Once traders are confident in a config, they push it to the live monitoring UI, which pulls real-time data from Charles Schwab and Interactive Brokers. The platform watches for any combination of triggers that signal a potential buy or sell across a far larger watchlist than any trader could track manually. No trades are made automatically — the system surfaces the signal, you decide. The goal is to take emotion out of the equation and scale up how many opportunities can realistically be monitored at once. Still actively being improved.</p>
           </div>
           <div class="pright">
             <div class="phlabel">How it works</div>
-            <div class="phi">Configure strategies with TA-Lib indicators + parameter ranges</div>
-            <div class="phi">GA backtests and evolves indicator combos over historical data</div>
-            <div class="phi">Exports optimized JSON configs for live deployment</div>
-            <div class="phi">Live feed from Interactive Brokers or Charles Schwab API</div>
-            <div class="phi">Multi-stock card view — signals, stop loss, take profit per ticker</div>
+            <div class="phi">Traders configure indicators + parameter ranges into a combined strategy</div>
+            <div class="phi">Algorithm optimizes weights and backtests across tickers and date ranges</div>
+            <div class="phi">Compare configs side-by-side to build confidence before going live</div>
+            <div class="phi">Live feed from Charles Schwab and Interactive Brokers APIs</div>
+            <div class="phi">Surfaces buy/sell signals across a larger watchlist than manual tracking allows</div>
           </div>
         </div>
         <div class="pgallery">
-          <div class="gslot">
-            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>SCREENSHOTS COMING SOON</span>
-          </div>
+          <img class="gthumb" src="images/WhatsApp Image 2026-01-15 at 9.40.33 PM.jpeg" alt="Trading Workstation — Live Monitor" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/WhatsApp Image 2026-01-15 at 9.40.37 PM.jpeg" alt="Trading Workstation — Strategy Config" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/WhatsApp Image 2026-01-15 at 9.40.40 PM.jpeg" alt="Trading Workstation — Backtest Results" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/WhatsApp Image 2026-01-15 at 9.40.45 PM.jpeg" alt="Trading Workstation — Signal View" onclick="openLightbox(this)">
         </div>
       </div>
 
@@ -771,7 +771,7 @@
           <div class="exp-prog">Clinical AI · Trading Systems · Automation</div>
           <ul class="exp-bullets">
             <li>Built LangGraph pipeline for dental SOAP documentation — converts raw appointment conversations to structured clinical notes using local LLMs</li>
-            <li>Designed algorithmic trading workstation integrating TA-Lib, genetic algorithms, and live brokerage APIs</li>
+            <li>Built algorithmic trading workstation for day traders — backtesting engine with GA optimization across indicators and parameters, plus live signal monitoring via Charles Schwab and Interactive Brokers APIs</li>
             <li>Built the AI job search platform you're indirectly benefiting from right now</li>
           </ul>
         </div>

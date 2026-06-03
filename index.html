@@ -734,6 +734,107 @@
         </div>
       </div>
 
+      <!-- P5 -->
+      <div class="pcard reveal">
+        <div class="ptop">
+          <div>
+            <div class="pmeta"><span class="pnum">P.05</span><span class="pbadge pro">PROFESSIONAL</span></div>
+            <div class="ptitle">DinoQuote — HVAC Contractor SaaS Platform</div>
+            <div class="psub">B2B SaaS for HVAC contractors: embeddable quote widgets, a white-label filter subscription store, and a contractor console — backed by Stripe, HouseCall Pro, and FilterKing integrations.</div>
+            <div class="ptags">
+              <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span>
+              <span class="tag">PostgreSQL</span><span class="tag">Stripe</span><span class="tag">SendGrid</span>
+              <span class="tag">HouseCall Pro</span><span class="tag">FilterKing</span><span class="tag">Vite</span>
+            </div>
+          </div>
+          <div class="plinks">
+            <a href="https://www.dinoquote.com/about/" class="plink" target="_blank">
+              <svg viewBox="0 0 24 24" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Live Site
+            </a>
+          </div>
+        </div>
+        <div class="pbody">
+          <div class="pdesc">
+            <p>Joined a growing codebase and helped build it into a production-ready, multi-tenant SaaS. DinoQuote lets HVAC contractors embed a branded quoting widget on their site — homeowners fill out a multi-step wizard, get an instant Good/Better/Best estimate, and their info is captured as a lead. A separate white-label filter subscription store handles recurring orders, tracked end-to-end through the FilterKing supplier API.</p>
+            <p>My work spanned the full stack: wiring up the Stripe subscription and payout flows, integrating HouseCall Pro for CRM sync (team members, calendar, customers), building the FilterKing integration for real-time pricing, order status, and refunds, setting up SendGrid automated email templates, and authoring the Supabase SQL migrations that kept the schema evolving cleanly. I also built out a local Postgres test environment, wrote tests for critical functionality, and set up Vercel staging previews with a GitHub-based review workflow.</p>
+          </div>
+          <div class="pright">
+            <div class="phlabel">Key Contributions</div>
+            <div class="phi">Stripe subscription flow, webhook handler, and Connect payouts to contractor accounts</div>
+            <div class="phi">HouseCall Pro CRM sync — team members, calendar, and customer data</div>
+            <div class="phi">FilterKing API integration — pricing, order status tracking, and refunds</div>
+            <div class="phi">SendGrid automated email templates for leads, orders, and subscriptions</div>
+            <div class="phi">Filter store logic and quick contact form</div>
+            <div class="phi">AI analytics PDF generator using Claude Haiku via the Anthropic API</div>
+            <div class="phi">Local Postgres mock DB, test suite, Vercel staging, and GitHub workflow setup</div>
+            <div class="phi">Supabase SQL migrations across the full engagement</div>
+          </div>
+        </div>
+        <div class="pgallery">
+          <div class="gslot">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Screenshots coming soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- P6 -->
+      <div class="pcard reveal d1">
+        <div class="ptop">
+          <div>
+            <div class="pmeta"><span class="pnum">P.06</span><span class="pbadge wip">IN PROGRESS</span></div>
+            <div class="ptitle">Candle — Agentic Office Systems</div>
+            <div class="psub">A YAML-driven AI workflow platform built as an ongoing venture with two collaborators. One shared runtime, two apps — a developer workflow tool and a white-label multi-tenant client platform with live SSE streaming and GoHighLevel CRM integration.</div>
+            <div class="ptags">
+              <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">React</span>
+              <span class="tag">SQLite</span><span class="tag">Drizzle ORM</span><span class="tag">OpenClaw</span>
+              <span class="tag">GoHighLevel</span><span class="tag">YAML</span>
+            </div>
+          </div>
+          <div class="plinks">
+            <a href="https://github.com/yersiniasGhost/caos" class="plink" target="_blank">
+              <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="pbody">
+          <div class="pdesc">
+            <p>CAOS (Candle Agentic Office Systems) is a monorepo AI workflow platform I'm building as a small venture with two collaborators. Workflows are authored in YAML — define the stages, form inputs, and agent prompts, drop the file in the catalog, and it shows up in the UI. At runtime, each stage streams over SSE and surfaces results in a live panel: chat, dynamic forms, log tail, charts, and downloadable artifacts, with real token cost pulled from the OpenClaw gateway.</p>
+            <p>The monorepo ships two apps on one shared runtime — <em>caos-dev</em>, a single-tenant developer workflow manager with a Kanban board and definition library, and <em>caos-white</em>, a multi-tenant white-label client platform with teams, per-client database rows, GoHighLevel CRM integration (opportunities, contacts, locations), and encrypted API credential storage. Both apps import the same <code>@caos/runner-ui</code> and <code>@caos/core</code> packages so the run UX is identical everywhere.</p>
+          </div>
+          <div class="pright">
+            <div class="phlabel">How it works</div>
+            <div class="phi">YAML-authored workflows — stages, form schemas, agent prompts, auto-advance rules</div>
+            <div class="phi">Live SSE streaming into a shared stage panel (chat, forms, logs, charts, artifacts)</div>
+            <div class="phi">Two apps, one runtime — caos-dev (single-tenant) and caos-white (multi-tenant)</div>
+            <div class="phi">Multi-tenant isolation via per-client DB rows, Argon2 auth, encrypted GHL tokens</div>
+            <div class="phi">GoHighLevel REST integration — opportunities dashboard, contacts, locations</div>
+            <div class="phi">Local-first — SQLite via Drizzle ORM, no external services beyond the OpenClaw gateway</div>
+          </div>
+        </div>
+        <div class="pgallery">
+          <img class="gthumb" src="images/candle-01.png" alt="Candle — Dashboard" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-02.png" alt="Candle — Workflow View" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-03.png" alt="Candle — Stage Panel" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-04.png" alt="Candle — Chat Interface" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-05.png" alt="Candle — Workflow Runner" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-06.png" alt="Candle — Definition Library" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-07.png" alt="Candle — Opportunities" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-08.png" alt="Candle — Teams" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-09.png" alt="Candle — Admin" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-10.png" alt="Candle — Client Portal" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-11.png" alt="Candle — Artifacts" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-12.png" alt="Candle — Log Tail" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-13.png" alt="Candle — Cost Panel" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-14.png" alt="Candle — Form Stage" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-15.png" alt="Candle — GHL Integration" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-16.png" alt="Candle — Settings" onclick="openLightbox(this)">
+          <img class="gthumb" src="images/candle-17.png" alt="Candle — Overview" onclick="openLightbox(this)">
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -765,15 +866,39 @@
       </div>
       <div class="exp-item reveal d1">
         <div>
-          <div class="exp-date">ONGOING</div>
-          <div class="exp-co">Independent</div>
-          <div class="exp-type">SIDE PROJECTS</div>
+          <div class="exp-date">FEB 2026 — MAY 2026</div>
+          <div class="exp-co">DinoQuote</div>
+          <div class="exp-type">CONTRACT</div>
         </div>
         <div class="exp-right">
-          <h4>AI Workflow & Systems Developer</h4>
-          <div class="exp-prog">Automation · Tooling</div>
+          <h4>Full-Stack Developer</h4>
+          <div class="exp-prog">HVAC Contractor SaaS · B2B Platform</div>
           <ul class="exp-bullets">
-            <li>Built the AI job search platform you're indirectly benefiting from right now</li>
+            <li>Wired up Stripe subscription flow, webhook handler, and Connect payouts for contractor accounts</li>
+            <li>Integrated HouseCall Pro CRM — syncing team members, calendar, and customer data with the platform</li>
+            <li>Built FilterKing supplier API integration for real-time pricing, order status tracking, and refund handling</li>
+            <li>Implemented SendGrid automated email templates for leads, filter orders, and subscription events</li>
+            <li>Built filter store business logic, quick contact form, and features across admin and contractor console views</li>
+            <li>Built AI analytics PDF generator using Claude Haiku — system-prompted for scope and hallucination control</li>
+            <li>Set up local Postgres test environment, wrote tests for critical functionality, and configured Vercel staging previews with a GitHub review workflow</li>
+            <li>Authored Supabase SQL migrations across the full engagement as schema evolved</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item reveal d2">
+        <div>
+          <div class="exp-date">ONGOING</div>
+          <div class="exp-co">Candle</div>
+          <div class="exp-type">VENTURE · CO-FOUNDER</div>
+        </div>
+        <div class="exp-right">
+          <h4>AI Systems Developer</h4>
+          <div class="exp-prog">Candle Agentic Office Systems · CAOS</div>
+          <ul class="exp-bullets">
+            <li>Co-building a YAML-driven AI workflow platform with two collaborators under the Candle brand</li>
+            <li>Architected a monorepo with two apps on one shared runtime — a developer tool and a multi-tenant white-label client platform</li>
+            <li>Workflows stream results live over SSE (chat, forms, logs, charts, artifacts) via an OpenClaw gateway</li>
+            <li>Multi-tenant client platform includes GoHighLevel CRM integration, encrypted API token storage, and Argon2 auth</li>
           </ul>
         </div>
       </div>

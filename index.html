@@ -282,7 +282,7 @@
         </button>
         <button class="ritem" data-id="candle" onclick="selectProject('candle')">
           <span class="rno">02</span>
-          <span class="ri-main"><span class="ri-name"><span class="ri-star" title="Featured">★</span> Candle <span class="ri-status st-flag">Venture</span></span><span class="ri-desc">White-label AI operations platform for SMBs.</span></span>
+          <span class="ri-main"><span class="ri-name"><span class="ri-star" title="Featured">★</span> Candle <span class="ri-status st-flag">Venture</span></span><span class="ri-desc">CAOS: the all-in-one business OS for local businesses.</span></span>
           <span class="ri-arrow">→</span>
         </button>
         <button class="ritem" data-id="dinoquote" onclick="selectProject('dinoquote')">
@@ -462,32 +462,32 @@
 
 <template id="src-candle">
   <span class="d-tag">● Venture · Co-Founder</span>
-  <h2 class="d-title"><em>Candle</em>: AI Operations Platform</h2>
-  <p class="d-sub">An AI operations platform for small and mid-sized businesses, built with two co-founders. One shared client profile powers every downstream workflow: local search, SEO, competitor research, brand, and campaigns.</p>
+  <h2 class="d-title"><em>Candle</em>: CAOS, the Business Operating System</h2>
+  <p class="d-sub">CAOS (Candle Agentic Office Systems): an all-in-one business operating system for local businesses, built with two co-founders. One shared client context powers agentic workflows across marketing, social, local presence, and CRM, with human approval on everything that ships.</p>
   <div class="d-metrics">
     <div class="m"><div class="mv">1 PMC</div><div class="mk">Feeds every workflow</div></div>
     <div class="m"><div class="mv">HITL</div><div class="mk">Approval gates</div></div>
     <div class="m"><div class="mv">CRM sync</div><div class="mk">Real-time, bidirectional</div></div>
-    <div class="m"><div class="mv">Multi<span>·</span>tenant</div><div class="mk">White-label · RBAC</div></div>
+    <div class="m"><div class="mv">Multi<span>·</span>tenant</div><div class="mk">RBAC · per-client</div></div>
   </div>
   <div class="d-cols">
     <div class="d-desc">
-      <p>Candle is an AI-powered operations platform I'm building with two collaborators, designed to let agencies run multiple SMB clients from a single command center. The core idea is a <em>Product Marketing Context (PMC)</em>: a foundational profile capturing a business's positioning, services, and story that every AI workflow draws from automatically, so nothing starts from scratch.</p>
-      <p>On top of the PMC: a human-in-the-loop workflow engine that runs multi-stage jobs on recurring schedules (weekly/monthly/quarterly) and pauses at review gates for client approval before advancing. Current workflows handle local search and Google Business Profile optimization, automated SEO audits and website generation, competitor research that surfaces gaps and opportunities, and SMS/email campaign pipelines with A/B testing. A Local Presence module and Brand Kit give clients visibility into and control over how they show up across local search and the web.</p>
-      <p>The platform is multi-tenant with role-based access control, and includes a full real-time CRM sync layer: contacts, tasks, appointments, and calendars: with bidirectional third-party CRM integration, webhook ingestion, and graceful degradation when upstream systems fail.</p>
+      <p>Candle replaces the patchwork of tools a local business juggles (spreadsheets, separate SEO tools, social schedulers, manual follow-up) with one command center. The core idea is the <em>Product Marketing Context (PMC)</em>: a rich, agent-maintained profile of the client's business, audience, personas, and proof points that every AI feature draws from, so nothing starts from scratch and nothing gets invented.</p>
+      <p>Two engines run on top of it. Multi-stage <em>agent workflows</em> (SEO audits, Google Business Profile optimization, competitor intelligence, email sequences) run on schedules and pause at human approval gates before anything is applied. Interactive <em>AI studios</em> draft social posts, emails, and websites in a live back-and-forth, generating on-brand imagery and checking every claim against the PMC before it reaches a draft.</p>
+      <p>Around those sit the operating modules: campaign builder, social scheduler, Local Presence (review monitoring, SEO health scoring, competitor benchmarking), websites and funnels, a CRM with sales pipeline, and an asset library with brand kit. The platform is multi-tenant with role-based access, an admin view-as-client mode, and encrypted two-way CRM integration with webhook ingestion and graceful degradation when upstream systems fail.</p>
     </div>
     <div>
       <div class="d-hi-lbl">How It Works</div>
-      <div class="d-hi">Product Marketing Context (PMC): one client profile feeds every AI workflow downstream</div>
-      <div class="d-hi">Human-in-the-loop workflow engine with recurring schedules and client approval gates</div>
-      <div class="d-hi">Local Presence module: GBP optimization and local search ranking workflows</div>
-      <div class="d-hi">SEO audit and website generation workflows driven by the client's PMC</div>
-      <div class="d-hi">Competitor research workflows surfacing gaps and opportunities automatically</div>
-      <div class="d-hi">SMS and email campaign pipelines with A/B testing and performance tracking</div>
-      <div class="d-hi">Real-time bidirectional CRM sync: contacts, tasks, appointments, calendars</div>
-      <div class="d-hi">Multi-tenant with RBAC, Brand Kit, and per-client command center</div>
+      <div class="d-hi">Product Marketing Context (PMC): one rich client profile grounds every workflow and draft</div>
+      <div class="d-hi">Multi-stage agent workflows with approval gates: SEO audit, GBP optimizer, competitor intel, email sequences</div>
+      <div class="d-hi">AI studios draft social posts, emails, and websites live, with on-brand image generation</div>
+      <div class="d-hi">Local Presence OS: review monitoring, SEO health scores, competitor benchmarking with scraped profiles</div>
+      <div class="d-hi">CRM and sales pipeline: lead profiles, drag-and-drop stages, real-time two-way sync</div>
+      <div class="d-hi">Asset library with brand kit, folders, tags, and AI-generation lineage</div>
+      <div class="d-hi">Multi-tenant with RBAC and admin view-as-client mode</div>
     </div>
   </div>
+  <div class="d-links"><a class="d-link" href="https://candle-aos.com/" target="_blank"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M7 17 17 7M7 7h10v10"/></svg>Visit candle-aos.com</a></div>
   <div class="browser">
     <div class="bbar"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">candle: client command center</span></div>
     <div class="bscreen"><img class="main" src="images/cnd-signin.png" alt="Sign In" onclick="lbOpen(this)" /></div>
@@ -495,23 +495,34 @@
   <div class="gallery-cap"><b data-cap-label>Sign In</b><span data-cap-text>The Candle Office gateway: "empowering businesses with smart automations and agentic workflows."</span></div>
   <div class="rail-thumbs">
     <img class="rthumb active" src="images/cnd-signin.png" alt="Sign In" data-desc="The Candle Office gateway: &quot;empowering businesses with smart automations and agentic workflows.&quot;" onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
-    <img class="rthumb" src="images/cnd-campaign-acquisition.png" alt="Acquisition" data-desc="An acquisition campaign taking shape: intent, goals, and themes selected up top; only compatible options are surfaced." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
-    <img class="rthumb" src="images/cnd-campaign-nurture.png" alt="Nurture" data-desc="A nurture campaign: themes, channels, and CTAs for re-engaging people who already know the business." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-pmc.png" alt="Product Marketing Context" data-desc="The PMC: a rich, agent-maintained profile of the client's business, audience, and proof points that grounds every workflow and draft." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-campaign-acquisition.png" alt="Campaign Builder" data-desc="An acquisition campaign taking shape: intent, goals, themes, CTA, and channels, with only compatible options surfaced at each step." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/cnd-campaign-creative.png" alt="Generate Creative" data-desc="The creative agents draft channel-ready copy grounded in the brief: intent, theme, and audience." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
-    <img class="rthumb" src="images/cnd-campaign-build.png" alt="Campaign Builder" data-desc="Compose a multi-channel campaign in eight layers: each choice tunes the next, synthesized by the agents as you go." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
-    <img class="rthumb" src="images/cnd-seo-audit.png" alt="SEO Audit" data-desc="An SEO audit workflow: a human-in-the-loop agent scoping the audit before it runs (site type, priority pages, keywords)." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
-    <img class="rthumb" src="images/cnd-gbp-optimize.png" alt="GBP Optimize" data-desc="Google Business Profile optimization: the agent proposes changes; you review and approve before they're applied." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-campaign-build.png" alt="Campaign Composer" data-desc="Compose a multi-channel campaign in eight layers: each choice tunes the next, synthesized by the agents as you go." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-campaign-email.png" alt="Generated Email" data-desc="The generated email, draft-ready: subject line, pain-point narrative, and CTA button, all grounded in the campaign brief." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-post-content.png" alt="Social Post Setup" data-desc="Setting up a social post: the key message, destination link, target platforms, and content pillar that ground the draft." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-seo-audit.png" alt="SEO Audit Workflow" data-desc="A four-stage SEO audit run: agent chat scopes the audit, fills the brief live, and waits for approval before the audit starts." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-gbp-optimize.png" alt="GBP Optimize" data-desc="Google Business Profile optimization: the agent proposes changes; you review and approve before they are applied." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/cnd-gbp-report.png" alt="GBP Report" data-desc="The GBP optimization report: a before/after score summary across categories, services, description, and attributes." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/cnd-gbp-applylog.png" alt="GBP Apply Log" data-desc="The apply log: every change marked applied or flagged for manual action (12 of 14 automated)." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/cnd-seo-health.png" alt="SEO Health" data-desc="SEO Health: overall score, open issues, and a technical / on-page / content breakdown with prioritized findings." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
-    <img class="rthumb" src="images/cnd-competitors.png" alt="Competitors" data-desc="Competitor comparison: your local presence benchmarked against 10 rivals, with top opportunities and an activity feed." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-competitors.png" alt="Competitors" data-desc="Competitor comparison: your local presence benchmarked against local rivals, with top opportunities and an activity feed." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/cnd-lead-crm.png" alt="Lead / CRM" data-desc="A full CRM lead profile: activity timeline, tasks, appointments, and custom fields, synced in real time." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/cnd-calendar.png" alt="Schedules" data-desc="Scheduled workflows: recurring audit and analysis cadences on a run calendar that launches automatically." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
-    <img class="rthumb" src="images/cnd-media.png" alt="Assets & Media" data-desc="The assets & media library: photos and brand assets with AI analysis recommending what to capture next." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-media.png" alt="Assets &amp; Media" data-desc="The assets &amp; media library: photos and brand assets with AI analysis recommending what to capture next." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/candle-website-1.png" alt="Website Output 1" data-desc="Example output from the CAOS website builder workflow, generated for a client." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/candle-website-2.png" alt="Website Output 2" data-desc="Example output from the CAOS website builder workflow, generated for a client." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/candle-website-3.png" alt="Website Output 3" data-desc="Example output from the CAOS website builder workflow, generated for a client." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
   </div>
+  <!-- Pending screenshots (files not yet captured; re-add when saved to Desktop):
+       cnd-dashboard.png (Ledger command center), cnd-campaign-brief.png (brief agent chat),
+       cnd-campaign-review.png (launch-readiness hub), cnd-post-setup.png (series classification),
+       cnd-post-review.png (review & generate), cnd-post-draft.png (finished package w/ AI image),
+       cnd-seo-findings.png (report cards + prioritized findings), cnd-reviews.png (Reviews & Reputation),
+       cnd-competitor-detail.png (scraped competitor profile), cnd-crm-contacts.png (contacts table),
+       cnd-sales-pipeline.png (pipeline dashboard), cnd-workflows-installed.png (admin definitions),
+       cnd-brand-kit.png (brand kit), cnd-pmc-personas.png (PMC personas table).
+       Also pending replacement with new-UI captures: cnd-seo-health, cnd-competitors, cnd-lead-crm, cnd-media. -->
 </template>
 
 <template id="src-jobsearch">

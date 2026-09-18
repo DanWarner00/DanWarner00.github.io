@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Daniel Warner: Data, Analytics & AI</title>
+<title>Daniel Warner: AI Automation, Systems Integration & Data Analytics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,6 +15,7 @@
     --green:#2f6a43; --green2:#265636; --green-soft:#e9f0ea; --green-tint:rgba(47,106,67,0.08);
     --arch:'Archivo',sans-serif; --mono:'JetBrains Mono',monospace; --sans:'Space Grotesk',sans-serif;
     --shadow:0 18px 48px -24px rgba(21,20,15,0.45);
+    --r-s:8px; --r-m:12px; --r-l:16px; --r-pill:999px;
   }
   html{scroll-behavior:smooth;}
   body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
@@ -23,14 +24,14 @@
   .wrap{max-width:1200px;margin:0 auto;padding:0 40px;}
 
   .back-link{position:fixed;left:18px;bottom:18px;z-index:200;font-family:var(--mono);font-size:10px;letter-spacing:.08em;
-    color:var(--muted);background:var(--card);border:1px solid var(--line2);padding:8px 14px;border-radius:30px;transition:all .18s;text-transform:uppercase;box-shadow:var(--shadow);}
+    color:var(--muted);background:var(--card);border:1px solid var(--line2);padding:8px 14px;border-radius:var(--r-pill);transition:all .15s;text-transform:uppercase;}
   .back-link:hover{color:var(--green);border-color:var(--green);}
 
   nav{position:sticky;top:0;z-index:90;background:rgba(247,245,239,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
   .nav-in{position:relative;max-width:1200px;margin:0 auto;padding:0 40px;height:74px;display:flex;align-items:center;justify-content:space-between;}
   .brand{display:flex;align-items:center;gap:12px;}
-  .brand-mk{width:40px;height:40px;border-radius:11px;background:var(--green);display:flex;align-items:center;justify-content:center;
-    box-shadow:0 6px 16px -6px rgba(47,106,67,0.6);flex-shrink:0;overflow:hidden;position:relative;}
+  .brand-mk{width:40px;height:40px;border-radius:var(--r-m);background:var(--green);display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;overflow:hidden;position:relative;}
   .brand-mk::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.18),transparent 55%);}
   .brand-mk svg{width:23px;height:23px;position:relative;z-index:1;}
   .mk-node{transform-box:fill-box;transform-origin:center;animation:mkpulse 3s ease-in-out infinite;}
@@ -42,18 +43,18 @@
   @media(prefers-reduced-motion:reduce){.mk-node,.mk-wire{animation:none;}.mk-wire{opacity:.65;}}
   .brand-tx{display:flex;flex-direction:column;line-height:1.08;}
   .brand-name{font-family:var(--arch);font-weight:800;font-size:16px;letter-spacing:-0.02em;}
-  .brand-role{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-top:4px;white-space:nowrap;}
+  .brand-role{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-top:4px;white-space:nowrap;}
   .nav-mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;gap:6px;}
-  .nav-mid a{position:relative;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;transition:color .15s;padding:8px 14px;border-radius:8px;}
+  .nav-mid a{position:relative;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;transition:color .15s;padding:8px 14px;border-radius:var(--r-s);}
   .nav-mid a::after{content:'';position:absolute;left:14px;right:14px;bottom:4px;height:1.5px;background:var(--green);transform:scaleX(0);transform-origin:center;transition:transform .2s;}
   .nav-mid a:hover{color:var(--green);}
   .nav-mid a.active{color:var(--green);}
   .nav-mid a.active::after{transform:scaleX(1);}
   .nav-right{display:flex;align-items:center;gap:14px;}
-  .nav-cta{font-family:var(--mono);font-size:10.5px;letter-spacing:0.04em;text-transform:uppercase;background:var(--green);color:#fff;padding:10px 16px;border-radius:9px;transition:all .16s;white-space:nowrap;}
-  .nav-cta:hover{background:var(--green2);transform:translateY(-1px);box-shadow:0 8px 18px -8px rgba(47,106,67,0.7);}
-  .open{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;color:var(--green);
-    background:var(--green-soft);border:1px solid rgba(47,106,67,0.25);padding:6px 14px;border-radius:30px;letter-spacing:0.04em;white-space:nowrap;}
+  .nav-cta{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;text-transform:uppercase;background:var(--green);color:#fff;padding:10px 16px;border-radius:var(--r-s);transition:all .15s;white-space:nowrap;}
+  .nav-cta:hover{background:var(--green2);transform:translateY(-1px);}
+  .open{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--green);
+    background:var(--green-soft);border:1px solid rgba(47,106,67,0.25);padding:6px 14px;border-radius:var(--r-pill);letter-spacing:0.04em;white-space:nowrap;}
   .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2.4s ease-in-out infinite;}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
@@ -64,91 +65,91 @@
   h1{font-family:var(--arch);font-size:clamp(44px,6.5vw,80px);font-weight:800;line-height:0.94;letter-spacing:-0.035em;margin-bottom:22px;}
   h1 .g{color:var(--green);}
   .lede{font-size:20px;line-height:1.5;color:var(--ink2);max-width:560px;margin-bottom:14px;font-weight:500;}
-  .sub{font-size:14.5px;color:var(--muted);max-width:500px;margin-bottom:28px;}
+  .sub{font-size:15px;color:var(--muted);max-width:500px;margin-bottom:28px;}
   .sub em{color:var(--green);font-style:normal;font-weight:600;}
   .actions{display:flex;gap:12px;flex-wrap:wrap;}
-  .btn{font-family:var(--mono);font-size:11px;letter-spacing:0.05em;text-transform:uppercase;padding:13px 22px;border-radius:9px;transition:all .18s;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+  .btn{font-family:var(--mono);font-size:11px;letter-spacing:0.05em;text-transform:uppercase;padding:13px 22px;border-radius:var(--r-s);transition:all .15s;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
   .btn-p{background:var(--green);color:#fff;}
   .btn-p:hover{background:var(--green2);transform:translateY(-2px);}
   .btn-g{border:1px solid var(--line2);color:var(--ink2);}
   .btn-g:hover{border-color:var(--green);color:var(--green);}
-  .photo{aspect-ratio:1/1;width:100%;max-width:230px;border-radius:16px;overflow:hidden;border:1px solid var(--line2);box-shadow:var(--shadow);}
+  .photo{aspect-ratio:1/1;width:100%;max-width:230px;border-radius:var(--r-l);overflow:hidden;border:1px solid var(--line2);box-shadow:var(--shadow);}
   .photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 
   /* WORK EXPLORER */
   #work{padding:36px 0 96px;}
   .sec-kick{font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;}
-  .sec-title{font-family:var(--arch);font-size:34px;font-weight:800;letter-spacing:-0.025em;margin-bottom:8px;}
+  .sec-title{font-family:var(--arch);font-size:32px;font-weight:800;letter-spacing:-0.025em;margin-bottom:8px;}
   .sec-lead{font-size:15px;color:var(--muted);margin-bottom:34px;max-width:560px;}
   .detail-in{min-height:560px;}
   .explorer{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start;}
   .rail{display:flex;flex-direction:column;gap:10px;position:sticky;top:90px;}
-  .ritem{text-align:left;font:inherit;color:inherit;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:18px 20px;display:flex;gap:15px;align-items:flex-start;transition:all .18s;position:relative;overflow:hidden;}
+  .ritem{text-align:left;font:inherit;color:inherit;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);
+    padding:18px 20px;display:flex;gap:15px;align-items:flex-start;transition:all .15s;position:relative;overflow:hidden;}
   .ritem::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--green);transform:scaleY(0);transform-origin:top;transition:transform .2s;}
   .ritem:hover{border-color:var(--line2);transform:translateX(3px);}
-  .ritem.active{border-color:var(--green);background:var(--card);box-shadow:var(--shadow);}
+  .ritem.active{border-color:var(--green);background:var(--card);}
   .ritem.active::before{transform:scaleY(1);}
   .ritem .rno{font-family:var(--mono);font-size:11px;color:var(--dim);padding-top:3px;letter-spacing:0.05em;}
   .ritem.active .rno{color:var(--green);}
   .ri-main{flex:1;min-width:0;}
   .ri-name{font-family:var(--arch);font-size:18px;font-weight:700;letter-spacing:-0.01em;margin-bottom:4px;display:flex;align-items:center;gap:9px;}
-  .ri-status{font-family:var(--mono);font-size:8.5px;letter-spacing:0.05em;text-transform:uppercase;padding:2px 7px;border-radius:20px;}
+  .ri-status{font-family:var(--mono);font-size:10px;letter-spacing:0.05em;text-transform:uppercase;padding:2px 8px;border-radius:var(--r-pill);}
   .st-flag{background:var(--green);color:#fff;} .st-live{background:var(--green-soft);color:var(--green);border:1px solid rgba(47,106,67,0.3);}
   .st-wip{background:var(--paper2);color:var(--muted);border:1px solid var(--line2);}
   .ri-star{color:#e0a92e;font-size:13px;line-height:1;margin-left:-2px;}
   .ritem.compact{padding:13px 20px;}
-  .ritem.compact .ri-name{font-size:15px;margin-bottom:0;}
+  .ritem.compact .ri-name{font-size:16px;margin-bottom:0;}
   .ritem.compact .ri-desc{display:none;}
   .ritem.compact .rno{padding-top:1px;}
-  .rail-divider{font-family:var(--mono);font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);padding:12px 4px 2px;display:flex;align-items:center;gap:10px;}
+  .rail-divider{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);padding:12px 4px 2px;display:flex;align-items:center;gap:10px;}
   .rail-divider::after{content:'';flex:1;height:1px;background:var(--line);}
-  .ri-desc{font-size:12.5px;color:var(--muted);line-height:1.5;}
-  .ri-arrow{align-self:center;color:var(--dim);font-family:var(--mono);transition:all .18s;}
+  .ri-desc{font-size:13px;color:var(--muted);line-height:1.5;}
+  .ri-arrow{align-self:center;color:var(--dim);font-family:var(--mono);transition:all .15s;}
   .ritem.active .ri-arrow{color:var(--green);transform:translateX(3px);}
 
   /* DETAIL PANE */
-  .detail{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:600px;box-shadow:var(--shadow);}
+  .detail{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;min-height:600px;box-shadow:var(--shadow);}
   .detail-in{padding:34px 36px 38px;animation:swap .35s cubic-bezier(.2,.7,.3,1);}
   @keyframes swap{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
   .d-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.07em;text-transform:uppercase;
-    color:var(--green);background:var(--green-tint);border:1px solid rgba(47,106,67,0.25);padding:5px 12px;border-radius:30px;margin-bottom:18px;}
+    color:var(--green);background:var(--green-tint);border:1px solid rgba(47,106,67,0.25);padding:5px 12px;border-radius:var(--r-pill);margin-bottom:18px;}
   .d-title{font-family:var(--arch);font-size:32px;font-weight:800;letter-spacing:-0.025em;line-height:1.04;margin-bottom:13px;}
   .d-title em{font-style:normal;color:var(--green);}
-  .d-sub{font-size:16.5px;line-height:1.5;color:var(--ink2);margin-bottom:26px;}
-  .d-metrics{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:28px;background:var(--paper);}
+  .d-sub{font-size:17px;line-height:1.5;color:var(--ink2);margin-bottom:26px;}
+  .d-metrics{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;margin-bottom:28px;background:var(--paper);}
   .d-metrics .m{flex:1;min-width:130px;padding:16px 20px;border-right:1px solid var(--line);}
   .d-metrics .m:last-child{border-right:none;}
-  .d-metrics .mv{font-family:var(--arch);font-size:21px;font-weight:800;letter-spacing:-0.01em;}
+  .d-metrics .mv{font-family:var(--arch);font-size:24px;font-weight:800;letter-spacing:-0.01em;}
   .d-metrics .mv span{color:var(--green);}
-  .d-metrics .mk{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-top:5px;}
+  .d-metrics .mk{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-top:5px;}
   .d-cols{display:grid;grid-template-columns:1.25fr 1fr;gap:38px;margin-bottom:28px;}
   .d-desc p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:13px;}
   .d-desc p:last-child{margin-bottom:0;}
   .d-desc em{color:var(--green);font-style:normal;font-weight:600;}
-  .d-desc code{font-family:var(--mono);font-size:12px;background:var(--paper2);padding:1px 5px;border-radius:3px;}
+  .d-desc code{font-family:var(--mono);font-size:12px;background:var(--paper2);padding:1px 5px;border-radius:4px;}
   .d-hi-lbl{font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
-  .d-hi{display:flex;gap:11px;margin-bottom:11px;font-size:12.5px;color:var(--ink2);line-height:1.5;}
+  .d-hi{display:flex;gap:12px;margin-bottom:12px;font-size:13px;color:var(--ink2);line-height:1.5;}
   .d-hi::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--green);margin-top:6px;}
   .d-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;}
-  .d-link{font-family:var(--mono);font-size:11px;color:var(--ink2);border:1px solid var(--line2);border-radius:8px;padding:10px 16px;display:inline-flex;align-items:center;gap:8px;transition:all .15s;}
+  .d-link{font-family:var(--mono);font-size:11px;color:var(--ink2);border:1px solid var(--line2);border-radius:var(--r-s);padding:10px 16px;display:inline-flex;align-items:center;gap:8px;transition:all .15s;}
   .d-link:hover{border-color:var(--green);color:var(--green);}
   .d-link.dead{opacity:.45;pointer-events:none;}
   .d-link svg{width:13px;height:13px;stroke:currentColor;fill:none;}
 
-  .browser{border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--paper);}
+  .browser{border:1px solid var(--line2);border-radius:var(--r-m);overflow:hidden;background:var(--paper);}
   .bbar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--paper2);}
   .bdot{width:11px;height:11px;border-radius:50%;background:var(--line2);}
-  .burl{margin-left:8px;flex:1;font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:6px 13px;border-radius:6px;}
+  .burl{margin-left:8px;flex:1;font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:6px 12px;border-radius:var(--r-s);}
   .bscreen{aspect-ratio:16/9;overflow:hidden;background:#eceadf;display:flex;align-items:center;justify-content:center;}
   .bscreen img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;cursor:zoom-in;display:block;}
   .rail-thumbs{display:flex;gap:9px;margin-top:12px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin;scrollbar-color:var(--line2) transparent;}
   .rail-thumbs::-webkit-scrollbar{height:6px;} .rail-thumbs::-webkit-scrollbar-thumb{background:var(--line2);border-radius:3px;}
-  .rthumb{flex-shrink:0;height:62px;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:6px;border:2px solid var(--line2);opacity:.5;cursor:pointer;transition:all .15s;}
+  .rthumb{flex-shrink:0;height:62px;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:var(--r-s);border:2px solid var(--line2);opacity:.5;cursor:pointer;transition:all .15s;}
   .rthumb:hover{opacity:.85;} .rthumb.active{opacity:1;border-color:var(--green);}
-  .gallery-cap{margin-top:12px;font-size:13.5px;color:var(--ink2);line-height:1.55;display:flex;gap:10px;align-items:baseline;min-height:22px;}
-  .gallery-cap b{font-family:var(--mono);font-size:9.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--green);white-space:nowrap;flex-shrink:0;padding-top:1px;}
-  .gallery-cap span{transition:opacity .12s;}
+  .gallery-cap{margin-top:12px;font-size:14px;color:var(--ink2);line-height:1.55;display:flex;gap:10px;align-items:baseline;min-height:22px;}
+  .gallery-cap b{font-family:var(--mono);font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--green);white-space:nowrap;flex-shrink:0;padding-top:1px;}
+  .gallery-cap span{transition:opacity .15s;}
   .d-note{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:13px;display:flex;align-items:center;gap:8px;}
   .d-note::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);}
   template{display:none;}
@@ -163,19 +164,19 @@
   .aside .arow{padding:16px 0;border-top:1px solid var(--line);}
   .aside .arow:first-child{border-top:none;padding-top:0;}
   .aside .k{font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:7px;}
-  .aside .v{font-size:13.5px;color:var(--ink2);line-height:1.55;}
+  .aside .v{font-size:14px;color:var(--ink2);line-height:1.55;}
   .skills{margin-top:40px;display:flex;flex-wrap:wrap;gap:9px;}
-  .skill{font-family:var(--mono);font-size:11px;color:var(--ink2);background:var(--paper);border:1px solid var(--line2);padding:8px 13px;border-radius:8px;}
+  .skill{font-family:var(--mono);font-size:11px;color:var(--ink2);background:var(--paper);border:1px solid var(--line2);padding:8px 12px;border-radius:var(--r-s);}
   .skill b{color:var(--green);font-weight:500;}
   .exp-item{display:grid;grid-template-columns:220px 1fr;gap:48px;padding:30px 0;border-top:1px solid var(--line);}
   .exp-item:first-of-type{border-top:none;}
   .exp-date{font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:0.04em;margin-bottom:7px;}
-  .exp-co{font-family:var(--arch);font-size:17px;font-weight:700;margin-bottom:3px;}
-  .exp-type{font-family:var(--mono);font-size:9.5px;color:var(--dim);letter-spacing:0.05em;text-transform:uppercase;}
-  .exp-r h4{font-family:var(--arch);font-size:19px;font-weight:700;margin-bottom:5px;}
+  .exp-co{font-family:var(--arch);font-size:18px;font-weight:700;margin-bottom:3px;}
+  .exp-type{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:0.05em;text-transform:uppercase;}
+  .exp-r h4{font-family:var(--arch);font-size:20px;font-weight:700;margin-bottom:5px;}
   .exp-prog{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:16px;}
   .exp-r ul{list-style:none;}
-  .exp-r li{font-size:13.5px;color:var(--ink2);line-height:1.65;margin-bottom:8px;padding-left:18px;position:relative;}
+  .exp-r li{font-size:14px;color:var(--ink2);line-height:1.65;margin-bottom:8px;padding-left:18px;position:relative;}
   .exp-r li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--green);}
 
   #contact{padding:88px 0;border-top:1px solid var(--line);background:var(--green);color:#fff;}
@@ -183,10 +184,10 @@
   .contact-grid h2{font-family:var(--arch);font-size:clamp(40px,5.5vw,66px);font-weight:800;letter-spacing:-0.03em;line-height:0.95;margin-bottom:18px;}
   .contact-grid p{font-size:17px;color:rgba(255,255,255,0.86);max-width:380px;}
   .crows{display:flex;flex-direction:column;gap:10px;}
-  .crow{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;transition:all .15s;}
+  .crow{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:var(--r-m);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;transition:all .15s;}
   .crow:hover{background:rgba(255,255,255,0.15);transform:translateX(4px);}
-  .crow-k{font-family:var(--mono);font-size:9.5px;color:rgba(255,255,255,0.6);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px;}
-  .crow-v{font-size:14.5px;color:#fff;font-weight:500;}
+  .crow-k{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px;}
+  .crow-v{font-size:15px;color:#fff;font-weight:500;}
   .crow .arr{font-family:var(--mono);color:rgba(255,255,255,0.7);}
   footer{padding:24px 0;background:var(--ink);}
   .footer-in{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
@@ -197,10 +198,10 @@
   .reveal.vis{opacity:1;transform:translateY(0);}
 
   .lb{position:fixed;inset:0;background:rgba(8,8,5,.95);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;}
-  .lb img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:7px;cursor:default;box-shadow:0 30px 80px -20px rgba(0,0,0,.9);}
+  .lb img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:var(--r-s);cursor:default;box-shadow:0 30px 80px -20px rgba(0,0,0,.9);}
   .lb-x{position:absolute;top:22px;right:28px;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.1em;cursor:pointer;}
   .lb-x:hover{color:#fff;}
-  .lb-a{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:34px;color:rgba(255,255,255,.5);cursor:pointer;padding:20px;user-select:none;}
+  .lb-a{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:32px;color:rgba(255,255,255,.5);cursor:pointer;padding:20px;user-select:none;}
   .lb-a:hover{color:#fff;} .lb-prev{left:6px;} .lb-next{right:6px;}
   .lb-c{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
 
@@ -211,7 +212,7 @@
     .rail{position:static;flex-direction:row;overflow-x:auto;padding-bottom:6px;}
     .ritem{min-width:230px;flex-shrink:0;}
     .ri-arrow{display:none;}
-    .detail{min-height:0;} .detail-in{padding:26px 22px 30px;} .d-cols{grid-template-columns:1fr;gap:24px;} .d-title{font-size:26px;}
+    .detail{min-height:0;} .detail-in{padding:26px 22px 30px;} .d-cols{grid-template-columns:1fr;gap:24px;} .d-title{font-size:24px;}
     .about-grid{grid-template-columns:1fr;gap:34px;} .exp-item{grid-template-columns:1fr;gap:12px;} .contact-grid{grid-template-columns:1fr;gap:30px;}
   }
 </style>
@@ -232,7 +233,7 @@
       </span>
       <span class="brand-tx">
         <span class="brand-name">Daniel Warner</span>
-        <span class="brand-role">Data · Analytics · AI</span>
+        <span class="brand-role">AI Automation · Systems Integration · Data Analytics</span>
       </span>
     </a>
     <div class="nav-mid">
@@ -253,9 +254,9 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow"><span class="dot"></span>Portland, OR · Data, Analytics &amp; AI</div>
+        <div class="eyebrow"><span class="dot"></span>Portland, OR · AI Automation · Systems Integration · Data Analytics</div>
         <h1>Automate the tedious,<br><span class="g">empower the people.</span></h1>
-        <p class="lede">I build tools that automate and streamline data workflows, finding the insights inside the mess that actually move a business forward.</p>
+        <p class="lede">I connect business systems and replace manual processes with reliable automation: API integrations, data pipelines, and LLM-powered workflows.</p>
         <p class="sub">Currently <em>looking for my next role</em>: analyst, data, AI, or adjacent. Open to a wide range of industries and roles.</p>
         <div class="actions">
           <a href="#work" class="btn btn-p">Browse the Work →</a>
@@ -287,7 +288,7 @@
         </button>
         <button class="ritem" data-id="dinoquote" onclick="selectProject('dinoquote')">
           <span class="rno">03</span>
-          <span class="ri-main"><span class="ri-name">DinoQuote <span class="ri-status st-live">Professional</span></span><span class="ri-desc">B2B HVAC SaaS: Stripe, CRM, supplier APIs.</span></span>
+          <span class="ri-main"><span class="ri-name">DinoQuote <span class="ri-status st-live">Professional</span></span><span class="ri-desc">B2B HVAC SaaS: Housecall Pro, Twilio, Stripe.</span></span>
           <span class="ri-arrow">→</span>
         </button>
         <div class="rail-divider">More projects</div>
@@ -315,9 +316,9 @@
         <div class="sec-kick">About</div>
         <h2 class="sec-title" style="margin-bottom:26px;">Analyst, builder, finisher.</h2>
         <div class="about-text">
-          <p>I'm a data analytics programmer from Portland with a BS in Business Analytics from the University of Oregon. Most of my professional time has been inside a federal energy efficiency program, building the Python tooling, MongoDB pipelines, and compliance reports that helped identify <em>40,000 eligible households</em> across 30+ Ohio counties for weatherization funding under the Inflation Reduction Act.</p>
-          <p>What ties my work together is <em>building automations that save people time and empower the employees who use them</em>. At Candle I'm co-building an agentic AI platform that takes the repeatable office work a team would otherwise grind through and hands it to AI agents that do the job, draft the campaigns and creative, and check in for approval when it matters. On DinoQuote I wired up the Stripe billing, CRM sync, and SendGrid email automation that lets small HVAC contractors run their back office without a full ops team. Same instinct every time: find the manual, repetitive thing and let software carry it.</p>
-          <p>So here I am with over two years of real program experience, a handful of side projects I actually finished, and a willingness to point my skills at whatever needs solving. Whether it's <em>energy, AI, or operations</em>, if there's messy data or a manual workflow begging to be automated, I'm interested. I also spend a lot of my own time keeping up with the newest AI tooling, so the stack I reach for is rarely more than a few weeks behind the cutting edge.</p>
+          <p>I'm a data analytics and AI automation builder from Portland with a BS in Business Analytics from the University of Oregon. My focus is <em>connecting business systems and replacing manual processes with reliable automation</em>: third-party API integrations, data pipelines, and LLM-powered workflows that take the repetitive work off a team's plate.</p>
+          <p>Most of my professional time has been inside a federal energy efficiency program, where the Python pipelines and MongoDB dashboards I built helped identify <em>40,000 eligible households</em> across 30+ Ohio counties for weatherization funding under the Inflation Reduction Act. Since then I've wired field-service platforms, CRMs, payments, and messaging into one working system at DinoQuote, and at Candle I'm co-building an agentic AI platform where agents run workflows against a client's connected CRM and answer questions from approved source documents. Same instinct every time: find the manual, repetitive thing and let software carry it.</p>
+          <p>I'm comfortable <em>translating technical work into plain language</em> for non-technical stakeholders and training the teams who use it; at EmpowerSaves that meant onboarding agency staff on the dashboards so the numbers actually got used. Whether it's <em>energy, AI, or operations</em>, if there's messy data or a manual workflow begging to be automated, I'm interested. I also spend a lot of my own time keeping up with the newest AI tooling, so the stack I reach for is rarely more than a few weeks behind the cutting edge.</p>
           <p>Outside of work: cooking, lifting, playing basketball, golf, discovering new board games, and being a Blazers fan, which builds character if nothing else.</p>
         </div>
         <div class="skills">
@@ -329,7 +330,8 @@
           <span class="skill"><b>AI agents</b> · LangGraph · n8n</span>
           <span class="skill"><b>OpenClaw</b> · agent workflows</span>
           <span class="skill"><b>Workflow automation</b></span>
-          <span class="skill"><b>Stripe</b> · API integrations</span>
+          <span class="skill"><b>Integrations</b> · REST APIs · webhooks · Housecall Pro · ServiceTitan · GoHighLevel · Twilio · Stripe</span>
+          <span class="skill"><b>Retrieval systems</b> · RAG · indexed knowledge bases</span>
           <span class="skill"><b>Supabase</b> · Postgres</span>
           <span class="skill"><b>Power BI</b></span>
           <span class="skill"><b>Excel</b> · models</span>
@@ -355,12 +357,13 @@
     <div class="exp-item">
       <div><div class="exp-date">DEC 2023 to OCT 2025</div><div class="exp-co">EmpowerSaves</div><div class="exp-type">Contract</div></div>
       <div class="exp-r">
-        <h4>Data Analytics Programmer · Contract via Whitehorse Analytics</h4>
+        <h4>Data Analytics Programmer</h4>
         <div class="exp-prog">EmpowerSaves · Federal Weatherization · Clinical AI</div>
         <ul>
           <li>Processed energy, demographic, and property data for 1M+ households to identify 40,000 eligible candidates across 30+ Ohio counties under IRA requirements</li>
-          <li>Managed MongoDB database architecture supporting dashboards used by community action agencies statewide</li>
-          <li>Developed Python applications automating household eligibility prioritization and reporting workflows</li>
+          <li>Managed the MongoDB database architecture behind dashboards used across 30+ counties for two years by community action agencies statewide</li>
+          <li>Developed Python automation scripts for household eligibility prioritization and reporting, still in production today</li>
+          <li>Trained and onboarded agency staff on the dashboards, translating technical outputs into plain language for non-technical program teams</li>
           <li>Produced custom reports and visualizations for stakeholders across agencies and program management</li>
           <li>Maintained project documentation in Jira and Confluence for compliance timeline tracking</li>
         </ul>
@@ -369,11 +372,12 @@
     <div class="exp-item">
       <div><div class="exp-date">FEB 2026 to MAY 2026</div><div class="exp-co">DinoQuote</div><div class="exp-type">Contract</div></div>
       <div class="exp-r">
-        <h4>Full-Stack Engineer · Contract</h4>
+        <h4>Software Developer · Contract</h4>
         <div class="exp-prog">HVAC Contractor SaaS · B2B Platform</div>
         <ul>
+          <li>Built a live two-way integration with field-service platforms (Housecall Pro live, ServiceTitan scoped), syncing calendars, jobs, and leads with contractors' existing software</li>
+          <li>Added Twilio lead-routing automation that alerts the contractor and internal staff the moment a new lead lands in their CRM</li>
           <li>Built Stripe subscription flow, webhook handler, and Connect payouts so contractors receive direct deposits</li>
-          <li>Integrated HouseCall Pro CRM to sync team members, calendar events, and customers bidirectionally</li>
           <li>Developed FilterKing supplier API integration for real-time filter pricing, order tracking, and refund flows</li>
           <li>Created AI-generated analytics reports (Claude Haiku) with scope-guardrails and hallucination controls, exported as PDFs</li>
           <li>Stood up local Postgres test environment, wrote integration tests, and configured Vercel staging with a GitHub PR review gate</li>
@@ -388,7 +392,8 @@
         <ul>
           <li>Co-founder of CAOS, an all-in-one business operating system for local businesses: marketing, social, local presence, CRM, and websites</li>
           <li>Designed the Product Marketing Context (PMC): one agent-maintained client profile that grounds every downstream workflow and draft</li>
-          <li>Built a human-in-the-loop agent workflow engine on OpenClaw (SEO audits, GBP optimization, competitor intelligence) that pulls data, generates briefs and reports, and pauses at approval gates on recurring schedules</li>
+          <li>Built a human-in-the-loop agent workflow engine on OpenClaw (SEO audits, GBP optimization, competitor intelligence) that pulls data from the client's connected CRM or customer list, generates briefs and reports, and pauses at approval gates on recurring schedules</li>
+          <li>Built the knowledge-retrieval layer: agents navigate an indexed file structure to answer questions from approved source documents, chosen over vector search for maintainability and interpretability on small document sets</li>
           <li>Shipped AI creative studios that draft platform-native social and email content with on-brand image generation, claim-checked against the PMC</li>
           <li>Multi-tenant with RBAC and a real-time bidirectional CRM sync layer: contacts, tasks, appointments, and calendars</li>
         </ul>
@@ -445,6 +450,7 @@
     <div class="d-desc">
       <p>My main professional work. Built the data infrastructure for a federal weatherization program under the Inflation Reduction Act, processing energy, demographic, and property data for over a million households to identify <em>40,000 eligible candidates</em> for free home upgrades under Justice 40 compliance requirements.</p>
       <p>Day-to-day: coordinating with counties and data providers to ensure data accuracy, cleaning and transforming records from community action agencies, energy providers, and demographic sources, building custom Python applications for "Heat Load" and "Cool Load" calculations and comparable home energy profiling, and managing the MongoDB databases that fed the agency-facing portal.</p>
+      <p>The Python automation scripts are still in production today, and the MongoDB dashboards ran across 30+ counties for two years. I also trained and onboarded agency staff on those dashboards, translating technical outputs into plain language for non-technical program teams.</p>
     </div>
     <div>
       <div class="d-hi-lbl">Key Work</div>
@@ -453,6 +459,7 @@
       <div class="d-hi">Automated eligibility scoring across 30+ county datasets</div>
       <div class="d-hi">Data pipeline coordination across agencies, energy providers, and counties</div>
       <div class="d-hi">MongoDB backend feeding a per-household portal: Street View, satellite imagery, demographic and energy data</div>
+      <div class="d-hi">Trained and onboarded agency staff on the dashboards, translating technical outputs into plain language</div>
     </div>
   </div>
   <div class="browser">
@@ -475,13 +482,14 @@
   <div class="d-cols">
     <div class="d-desc">
       <p>Candle replaces the patchwork of tools a local business juggles (spreadsheets, separate SEO tools, social schedulers, manual follow-up) with one command center. The core idea is the <em>Product Marketing Context (PMC)</em>: a rich, agent-maintained profile of the client's business, audience, personas, and proof points that every AI feature draws from, so nothing starts from scratch and nothing gets invented.</p>
-      <p>Two engines run on top of it. Multi-stage <em>agent workflows</em>, executed through an OpenClaw gateway (SEO audits, Google Business Profile optimization, competitor intelligence, email sequences), pull data, generate briefs and reports, and pause at human approval gates before anything is applied. Interactive <em>AI studios</em> draft social posts, emails, and websites in a live back-and-forth, generating on-brand imagery and checking every claim against the PMC before it reaches a draft.</p>
+      <p>Two engines run on top of it. Multi-stage <em>agent workflows</em>, executed through an OpenClaw gateway (SEO audits, Google Business Profile optimization, competitor intelligence, email sequences), run against the client's connected CRM or customer list, generate briefs and reports, and pause at human approval gates before anything is applied. Interactive <em>AI studios</em> draft social posts, emails, and websites in a live back-and-forth, generating on-brand imagery and checking every claim against the PMC before it reaches a draft. A <em>knowledge-retrieval layer</em> lets agents answer questions from approved source documents by navigating an indexed file structure, chosen over vector search for maintainability and interpretability on small document sets.</p>
       <p>Around those sit the operating modules: campaign builder, social scheduler, Local Presence (review monitoring, SEO health scoring, competitor intelligence), websites and funnels, a CRM with sales pipeline, and an asset library with brand kit. The platform is multi-tenant with role-based access, an admin view-as-client mode, and encrypted two-way CRM integration with webhook ingestion and graceful degradation when upstream systems fail.</p>
     </div>
     <div>
       <div class="d-hi-lbl">How It Works</div>
       <div class="d-hi">Product Marketing Context (PMC): one rich client profile grounds every workflow and draft</div>
       <div class="d-hi">Multi-stage agent workflows with approval gates: SEO audit, GBP optimizer, competitor intel, email sequences</div>
+      <div class="d-hi">Knowledge retrieval: agents answer from approved source docs by navigating an indexed file structure, chosen over vector search for maintainability on small document sets</div>
       <div class="d-hi">AI studios draft social posts, emails, and websites live, with on-brand image generation</div>
       <div class="d-hi">Local Presence OS: review monitoring, SEO health scores, competitor intelligence with scraped rival profiles</div>
       <div class="d-hi">CRM and sales pipeline: lead profiles, drag-and-drop stages, real-time two-way sync</div>
@@ -497,6 +505,7 @@
   <div class="gallery-cap"><b data-cap-label>Finished Draft</b><span data-cap-text>The finished package: platform-native copy, hashtags, an AI-generated image, and a Brand Guardian pass verifying every claim against the context.</span></div>
   <div class="rail-thumbs">
     <img class="rthumb active" src="images/cnd-post-draft.png" alt="Finished Draft" data-desc="The finished package: platform-native copy, hashtags, an AI-generated image, and a Brand Guardian pass verifying every claim against the context." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
+    <img class="rthumb" src="images/cnd-ask-anything.png" alt="Ask CAOS Anything" data-desc="Ask CAOS Anything, an LLM wiki. Instead of vector search, an agent reads a one-page index of approved documentation, picks the right source file, and answers only from it, so every answer traces back to a file a human wrote." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/cnd-post-setup.png" alt="Social Post Setup" data-desc="Setting up a social post: standalone, attached to a campaign in flight, or part of a recurring series." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/cnd-post-content.png" alt="Post Content" data-desc="Content and platforms: the key message, destination link, target platforms, and content pillar that ground the draft." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
     <img class="rthumb" src="images/cnd-seo-health.png" alt="SEO Health" data-desc="SEO Health in Local Presence: overall score, technical / on-page / content breakdowns, and E-E-A-T trust signals from the latest audit." onclick="setMain(this)" onmouseover="capHover(this)" onmouseout="capReset(this)" />
@@ -591,17 +600,19 @@
 <template id="src-dinoquote">
   <span class="d-tag">● Professional · Contract</span>
   <h2 class="d-title">DinoQuote: HVAC SaaS</h2>
-  <p class="d-sub">B2B HVAC SaaS: embeddable widgets, CRM sync, AI analytics.</p>
+  <p class="d-sub">B2B HVAC SaaS: field-service integrations, lead routing, billing.</p>
   <div class="d-cols">
     <div class="d-desc">
-      <p>Full-stack contract work building the money-moving parts of an HVAC contractor platform: Stripe subscriptions, webhooks, and Connect payouts; a HouseCall Pro CRM sync; and a FilterKing supplier integration for live pricing and order tracking.</p>
+      <p>Contract work across the integration and billing layers of an HVAC contractor platform: a live two-way Housecall Pro integration (ServiceTitan scoped) syncing calendars, jobs, and leads with contractors' existing software; Twilio lead-routing alerts to the contractor and internal staff; Stripe subscriptions, webhooks, and Connect payouts; and a FilterKing supplier integration for live pricing and order tracking.</p>
       <p>Also built the automated SendGrid email flows and an AI analytics PDF generator using Claude Haiku, system-prompted for scope and hallucination control.</p>
     </div>
     <div>
       <div class="d-hi-lbl">Stack</div>
       <div class="d-hi">React · TypeScript · Supabase</div>
       <div class="d-hi">Stripe subscriptions, webhooks &amp; Connect payouts</div>
-      <div class="d-hi">HouseCall Pro &amp; FilterKing API integrations</div>
+      <div class="d-hi">Housecall Pro two-way sync · ServiceTitan (scoped)</div>
+      <div class="d-hi">Twilio lead-routing alerts</div>
+      <div class="d-hi">FilterKing supplier API integration</div>
       <div class="d-hi">SendGrid email automation · Claude Haiku PDF analytics</div>
     </div>
   </div>
